@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - LinguaPro</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Lingua<span class="highlight">Pro</span></h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">📚</span>
+                    <span>Mis Cursos</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">📝</span>
+                    <span>Lecciones</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">🎯</span>
+                    <span>Progreso</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">👥</span>
+                    <span>Profesores</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">💬</span>
+                    <span>Mensajes</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">⚙️</span>
+                    <span>Configuración</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn-logout">
+                    <span class="icon">🚪</span>
+                    <span>Cerrar Sesión</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Bienvenido, <span id="userName" class="highlight">Usuario</span></h1>
+                    <p>Continúa tu viaje de aprendizaje</p>
+                </div>
+                <div class="header-right">
+                    <div class="search-box">
+                        <input type="text" placeholder="Buscar...">
+                        <span class="icon">🔍</span>
+                    </div>
+                    <div class="notifications">
+                        <span class="icon">🔔</span>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="profile-menu">
+                        <div class="profile-pic">
+                            <span id="userInitials">U</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-content">
+                        <p class="stat-label">Lecciones Completadas</p>
+                        <h3 class="stat-value" id="completedLessons">0</h3>
+                        <span class="stat-change positive">+12% este mes</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-content">
+                        <p class="stat-label">Horas de Estudio</p>
+                        <h3 class="stat-value" id="studyHours">0</h3>
+                        <span class="stat-change positive">+8% esta semana</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-content">
+                        <p class="stat-label">Racha Actual</p>
+                        <h3 class="stat-value" id="currentStreak">0</h3>
+                        <span class="stat-change">días consecutivos</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-content">
+                        <p class="stat-label">Nivel</p>
+                        <h3 class="stat-value" id="userLevel">Principiante</h3>
+                        <span class="stat-change">B1 - Intermedio</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="content-grid">
+                <!-- Current Courses -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2>Cursos Activos</h2>
+                        <a href="#" class="view-all">Ver todos</a>
+                    </div>
+                    <div class="courses-list" id="activeCourses">
+                        <div class="course-item">
+                            <div class="course-flag">🇬🇧</div>
+                            <div class="course-info">
+                                <h4>Inglés Intermedio</h4>
+                                <p>Nivel B1 • 45% completado</p>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 45%"></div>
+                                </div>
+                            </div>
+                            <button class="btn-continue">Continuar</button>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-flag">🇪🇸</div>
+                            <div class="course-info">
+                                <h4>Español Avanzado</h4>
+                                <p>Nivel C1 • 78% completado</p>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 78%"></div>
+                                </div>
+                            </div>
+                            <button class="btn-continue">Continuar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Classes -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2>Próximas Clases</h2>
+                        <a href="#" class="view-all">Ver calendario</a>
+                    </div>
+                    <div class="classes-list" id="upcomingClasses">
+                        <div class="class-item">
+                            <div class="class-time">
+                                <span class="time">10:00 AM</span>
+                                <span class="date">Hoy</span>
+                            </div>
+                            <div class="class-info">
+                                <h4>Conversación en Inglés</h4>
+                                <p>con Prof. Sarah Johnson</p>
+                            </div>
+                            <button class="btn-join">Unirse</button>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time">
+                                <span class="time">3:00 PM</span>
+                                <span class="date">Mañana</span>
+                            </div>
+                            <div class="class-info">
+                                <h4>Gramática Española</h4>
+                                <p>con Prof. Carlos Ruiz</p>
+                            </div>
+                            <button class="btn-schedule">Programado</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="dashboard-card full-width">
+                <div class="card-header">
+                    <h2>Actividad Reciente</h2>
+                </div>
+                <div class="activity-list" id="recentActivity">
+                    <div class="activity-item">
+                        <div class="activity-icon">✅</div>
+                        <div class="activity-content">
+                            <p><strong>Lección completada:</strong> Present Perfect Tense</p>
+                            <span class="activity-time">Hace 2 horas</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">🏆</div>
+                        <div class="activity-content">
+                            <p><strong>Logro desbloqueado:</strong> 7 días consecutivos</p>
+                            <span class="activity-time">Hace 5 horas</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">📝</div>
+                        <div class="activity-content">
+                            <p><strong>Quiz completado:</strong> Vocabulario Avanzado - 85%</p>
+                            <span class="activity-time">Hace 1 día</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
